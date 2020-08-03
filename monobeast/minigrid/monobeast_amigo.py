@@ -1261,10 +1261,11 @@ class MinigridNet(nn.Module):
 
  
 
-Net = MinigridNet
-GeneratorNet = Generator
+Net = MinigridNet #Create the Student Policy
+GeneratorNet = Generator #Create the Teacher Policy
 
 
+# Get MiniGrid observation to ignore language instruction.
 class Minigrid2Image(gym.ObservationWrapper):
     """Get MiniGrid observation to ignore language instruction."""
     def __init__(self, env):
